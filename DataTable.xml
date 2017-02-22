@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name = "Automation TEst">
+
+<parameter name ="userID" value = "user1"/>
+
+<classes>
+<class name = "thiYaguFramework.DataProviderExample">
+
+
+</class>
+
+</classes>
+
+</suite>

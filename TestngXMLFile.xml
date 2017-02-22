@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name = "Automation Test">
+<test name = "Smoke test">
+<parameter name="username" value="abc"/>
+<paramter name="url" value = "www.google.com"/>
+<classes>
+<class name = "BasicsAnotations.AppTest"></class>
+</classes>
+
+</test>
+
+</suite>
