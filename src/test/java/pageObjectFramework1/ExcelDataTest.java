@@ -2,25 +2,16 @@ package pageObjectFramework1;
 
 import java.io.IOException;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.RemoteWebDriver;
+import lib.ExcelDataConfig;
+
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import thiYaguFramework.HomePage;
-import thiYaguFramework.TestBase;
 
-public class LoginTest extends TestBase{
-//Inheriting using extends for 
+public class ExcelDataTest {
+
 	
-	
-		
-	@BeforeTest
-	public void IntialSetUp() throws IOException{
-		
-		setup();
-	}
 	
 	@Test
 	public void LoginApp() throws IOException
@@ -31,8 +22,12 @@ public class LoginTest extends TestBase{
 		
 		//Creating Object means Invoking constructor method of that class ;so give driver HomePage(driver).
 		
+		ExcelDataConfig excel = new ExcelDataConfig("C:\\JavaProjects\\App\\thiYaguProject\\TestData.xlsx");
 		
-		HomePage LP = new HomePage(driver);
+		System.out.println("Excel data: "+excel.getData("Sheet1", 0, 0));
+		
+		
+		/*HomePage LP = new HomePage(driver);
 		LP.setUserID("test");
 		LP.setPassword("test");
 		
@@ -46,8 +41,8 @@ public class LoginTest extends TestBase{
 		LP.LaunchNewURL("www.google.com");
 //		LP.AlertPopUpWindow();
 		
-		
+		*/
 	}
 	
+	
 }
-

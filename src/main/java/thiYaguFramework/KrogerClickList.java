@@ -32,7 +32,7 @@ public class KrogerClickList {
 //		WebElement textarea1 = (WebElement) js.executeScript("return document.evaluate('//input[@class='ng-pristine ng-valid ng-touched']', document, null, XPathResult.ANY_TYPE, null).singleNodeValue;");
 		//js.executeScript("arguments[0].click();", textarea);
 		//textarea.sendKeys("45458");
-		/*List<WebElement> e = driver.findElements(By.name("store"));
+		List<WebElement> e = driver.findElements(By.name("store"));
 		System.out.println(e.get(0));
 		System.out.println(e.get(1));
 		e.size();
@@ -44,11 +44,14 @@ public class KrogerClickList {
 				exp.sendKeys("45342");
 				break;
 			}
-		}*/
+		}
 		//js.executeScript("javascript: document.getElementsByClassName('pickup-store-search-field ng-pristine ng-valid')[0].children[1].removeAttribute('disabled')");
-		WebElement textbox = (WebElement) js.executeScript("document.getElementsByName('store')[0]");
+		//WebElement textbox = (WebElement) js.executeScript("document.getElementsByName('store')[0]");
+		
+		//js.executeScript("argument[0].removeAttribute('disabled');",textbox);
+		
 		//textbox.click();
-		textbox.sendKeys(zipcode);
+		//textbox.sendKeys(zipcode);
 		
 		
 		//e.get(0).click();

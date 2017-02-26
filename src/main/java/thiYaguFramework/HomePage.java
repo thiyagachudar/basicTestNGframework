@@ -1,10 +1,17 @@
 package thiYaguFramework;
+import java.io.File;
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 public class HomePage {
 
 	WebDriver driver;
@@ -90,6 +97,17 @@ public class HomePage {
 		//js.executeScript("document.getElementsByClassName(scrollID).scrollIntoView(true);");
 		js.executeScript("arguments[0].click();", scrollID);
 		
+	}
+	public void WaitForElement(WebElement ElementName){
+		
+		WebDriverWait wait = new WebDriverWait(driver,30);
+		wait.until(ExpectedConditions.visibilityOf(ElementName));
+		wait.until(ExpectedConditions.jsReturnsValue(""));
+	}
+	
+	public void GetScreenShot() throws Exception{
+		File sourceFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(sourceFile, new File("C:\\JavaProjects\\App\\thiYaguProject\\ScreenShot\\scrrnshot.png"));
 	}
 	
 	
