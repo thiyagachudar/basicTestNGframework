@@ -20,7 +20,7 @@ public class KrogerPickStore  extends TestBase
 	}
 	
 	@Test
-	public void SearchStore() throws IOException
+	public void SearchStore()
 	{
 		//Oops Concept 
 		//To access the method present in any class we need to create a object for that class and then call the 
@@ -30,7 +30,7 @@ public class KrogerPickStore  extends TestBase
 		
 		
 		KrogerClickList Krog = new KrogerClickList(driver);
-		Krog.EnterZipCode("45459");
+		Krog.EnterZipCodeWithJS("45459");
 		Krog.ClickSubmit();
 		
 		
