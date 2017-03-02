@@ -35,7 +35,7 @@ public class AppTest {
 	public void GetUserName(String name)
 	{
 		System.out.println("Got this form the xml file: "+ name);
-		
+		//System.out.println("Got this form the xml file: "+ password);
 				
 	}
 	

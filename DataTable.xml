@@ -2,6 +2,7 @@
 <suite name = "Automation TEst">
 
 <parameter name ="userID" value = "user1"/>
+<parameter name ="password" value = "jack"/>
 
 <classes>
 <class name = "thiYaguFramework.DataProviderExample">
