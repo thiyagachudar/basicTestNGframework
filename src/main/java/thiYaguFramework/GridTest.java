@@ -16,6 +16,7 @@ public class GridTest {
 		DesiredCapabilities capabilities = DesiredCapabilities.firefox();
 		capabilities.setCapability(FirefoxDriver.BINARY,new File("c:\\Program Files (x86) \\Mozilla Firefox\\firefox.exe").getAbsolutePath());
 		
+		
 		RemoteWebDriver driver = new RemoteWebDriver(new URL("http://192.168.0.106:5566/wd/hub"),capabilities);
 
 		driver.get("www.google.com");

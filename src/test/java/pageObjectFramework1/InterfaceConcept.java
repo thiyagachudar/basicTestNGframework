@@ -8,7 +8,7 @@ public class InterfaceConcept implements AutomationInterface   {
 		// TODO Auto-generated method stub
 
 	}
-
+	
 	public void Initialze() {
 		// TODO Auto-generated method stub
 		

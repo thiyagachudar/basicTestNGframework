@@ -5,9 +5,15 @@
     <classes>
       <class name="pageObjectFramework1.LoginTest">
         <methods>
+          <include name="IntialSetUp"/>
           <include name="LoginApp"/>
         </methods>
       </class> <!-- pageObjectFramework1.LoginTest -->
+      <class name="pageObjectFramework1.KrogerPickStore">
+        <methods>
+          <include name="IntialSetUp"/>
+        </methods>
+      </class> <!-- pageObjectFramework1.KrogerPickStore -->
     </classes>
   </test> <!-- Regression test(failed) -->
 </suite> <!-- Failed suite [Automation Test] -->

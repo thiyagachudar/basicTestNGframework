@@ -3,7 +3,8 @@
 	
 	<test name = "Regression test">
 		<packages>
-		<package name="pageObjectFramework1" />
+		<package name="pageObjectFramework1.KrogerPickStore" />
+		
 		</packages>
 	</test>
 

@@ -3,13 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="BasicsAnotations.AppTest">
+      <class name="pageObjectFramework1.KrogerPickStore">
         <methods>
-          <include name="GetUserName"/>
-          <include name="createUserID"/>
-          <include name="RunEveryTest"/>
+          <include name="IntialSetUp"/>
+          <include name="KrogerLogin"/>
         </methods>
-      </class> <!-- BasicsAnotations.AppTest -->
+      </class> <!-- pageObjectFramework1.KrogerPickStore -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
