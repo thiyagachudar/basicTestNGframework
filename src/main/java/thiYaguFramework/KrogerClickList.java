@@ -1,11 +1,14 @@
 package thiYaguFramework;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.gargoylesoftware.htmlunit.javascript.host.Console;
 
@@ -38,6 +41,7 @@ public class KrogerClickList {
 			if (exp.isDisplayed())
 			{
 				exp.click();
+				driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 				exp.sendKeys(zipcode);
 				break;
 			}
@@ -64,7 +68,8 @@ public class KrogerClickList {
 		
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		WebElement textarea1 = (WebElement) js.executeScript("return document.evaluate(\"//input[@name='store' and @data-qa='pickup store search input']\", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue");
-				
+		WebDriverWait wait = new WebDriverWait(driver,10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated((By) textarea1));
 		if(textarea1.isEnabled()){
 			System.out.println("textbox is enabled");
 			textarea1.sendKeys(zipcode);
