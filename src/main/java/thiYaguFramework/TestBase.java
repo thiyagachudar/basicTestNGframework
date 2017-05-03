@@ -1,6 +1,5 @@
 package thiYaguFramework;
 
-import java.io.FileInputStream;
 import java.io.InputStream;
 
 import org.openqa.selenium.By;
@@ -10,18 +9,17 @@ import org.openqa.selenium.WebElement;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
-import java.util.function.Function;
+
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.interactions.Action;
+
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.Test;
 
 public class TestBase {
 	public static WebDriver driver = null;
@@ -124,7 +122,7 @@ public class TestBase {
 		
 	}
 	
-	public void drag(){
+	public void drag(WebElement source,WebElement target){
 		
 		Actions act = new Actions(driver);
 		act.dragAndDrop(source, target);

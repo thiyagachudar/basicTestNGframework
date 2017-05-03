@@ -11,10 +11,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.Test;
 
 public class ClickListOrder {
 
@@ -36,7 +35,7 @@ public class ClickListOrder {
 				public WebElement apply(WebDriver driver)
 				{
 					
-					return driver.findElement(emailID);
+					return driver.findElement((By) emailID);
 				}
 				
 				
@@ -48,7 +47,7 @@ public class ClickListOrder {
 						public boolean test(WebDriver driver)
 						{
 							
-							return driver.findElements(emailID).size()>0;
+							return driver.findElements((By) emailID).size()>0;
 						}
 
 												
@@ -63,13 +62,14 @@ public class ClickListOrder {
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
 				.pollingEvery(500, TimeUnit.MILLISECONDS)
 				.ignoring(NoSuchElementException.class)
-				.withTimeout(15, TimeUnit.SECONDS)
-				.withMessage("Exception Message");
+				.withTimeout(30, TimeUnit.SECONDS)
+				.ignoring(NoSuchElementException.class);
+				
 		
-		wait.until(FindElementEmailID);
+		wait.until(ExpectedConditions.elementToBeClickable(By.id("emailAddress")));
 		
 		
-		driver.findElement(emailID).sendKeys(email);
+		driver.findElement((By) emailID).sendKeys(email);
 	}
 	
 	
