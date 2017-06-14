@@ -15,72 +15,52 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 
-public class ClickListOrder {
+public class ClickListOrder extends TestBase {
 
-	WebDriver driver ;
-	
-//	By emailID = By.id("emailAddress");
-	
-	@FindBy (how=How.ID,using = "emailAddress")
+	// WebDriver driver ;
+
+	// By emailID = By.id("emailAddress");
+
+	@FindBy(how = How.ID, using = "emailAddress")
 	private WebElement emailID;
-	
-	public ClickListOrder(WebDriver driver){
-		
-		this.driver = driver;
-	}
-	
-	Function<WebDriver,WebElement> FindElementEmailID = new Function <WebDriver,WebElement>()
-			{
 
-				public WebElement apply(WebDriver driver)
-				{
-					
-					return driver.findElement((By) emailID);
-				}
-				
-				
-			};
-	
-	Predicate<WebDriver> FindPredicateElementEmailID = new Predicate <WebDriver>()
-					{
+	Function<WebDriver, WebElement> FindElementEmailID = new Function<WebDriver, WebElement>() {
 
-						public boolean test(WebDriver driver)
-						{
-							
-							return driver.findElements((By) emailID).size()>0;
-						}
+		public WebElement apply(WebDriver driver) {
 
-												
-						
-					};		
-	
-	public void EnterEmailID(String email)
-	{
-//		WebDriverWait waitdriver = new WebDriverWait(driver,20);
-		
-		
-		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
-				.pollingEvery(500, TimeUnit.MILLISECONDS)
-				.ignoring(NoSuchElementException.class)
-				.withTimeout(30, TimeUnit.SECONDS)
+			return driver.findElement((By) emailID);
+		}
+
+	};
+
+	Predicate<WebDriver> FindPredicateElementEmailID = new Predicate<WebDriver>() {
+
+		public boolean test(WebDriver driver) {
+
+			return driver.findElements((By) emailID).size() > 0;
+		}
+
+	};
+
+	public void EnterEmailID(String email) {
+		// WebDriverWait waitdriver = new WebDriverWait(driver,20);
+
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).pollingEvery(500, TimeUnit.MILLISECONDS)
+				.ignoring(NoSuchElementException.class).withTimeout(30, TimeUnit.SECONDS)
 				.ignoring(NoSuchElementException.class);
-				
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("emailAddress")));
-		
-		
+
 		driver.findElement((By) emailID).sendKeys(email);
 	}
-	
-	
-	public void javascriptExample() throws Exception {
-		   
-		
-		   driver.manage().timeouts().setScriptTimeout(60,TimeUnit.SECONDS);
-		   JavascriptExecutor js = (JavascriptExecutor) driver;
-		   
-		   js.executeAsyncScript("var callback = arguments[arguments.length - 1]; window.setTimeout(callback, 25000);");
 
-		   driver.get("http://www.google.com");
-		}
+	public void javascriptExample() throws Exception {
+
+		driver.manage().timeouts().setScriptTimeout(60, TimeUnit.SECONDS);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+
+		js.executeAsyncScript("var callback = arguments[arguments.length - 1]; window.setTimeout(callback, 25000);");
+
+		driver.get("http://www.google.com");
+	}
 }
