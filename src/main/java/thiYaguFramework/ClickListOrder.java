@@ -45,7 +45,7 @@ public class ClickListOrder extends TestBase {
 	public void EnterEmailID(String email) {
 		// WebDriverWait waitdriver = new WebDriverWait(driver,20);
 
-		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).pollingEvery(500, TimeUnit.MILLISECONDS)
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).pollingEvery(300, TimeUnit.MILLISECONDS)
 				.ignoring(NoSuchElementException.class).withTimeout(30, TimeUnit.SECONDS)
 				.ignoring(NoSuchElementException.class);
 
