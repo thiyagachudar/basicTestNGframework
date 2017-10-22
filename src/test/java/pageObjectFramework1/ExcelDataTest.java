@@ -19,7 +19,7 @@ public class ExcelDataTest {
 		
 		//Creating Object means Invoking constructor method of that class ;so give driver HomePage(driver).
 		
-		ExcelDataConfig excel = new ExcelDataConfig("C:\\JavaProjects\\App\\thiYaguProject\\TestData.xlsx");
+		ExcelDataConfig excel = new ExcelDataConfig("/Users/thiyagachudar/git/basicTestNGframework/TestData.xlsx");
 		
 		System.out.println("Excel data: "+excel.getData("Sheet1", 0, 0));
 		

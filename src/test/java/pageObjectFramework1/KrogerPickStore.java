@@ -6,6 +6,7 @@ import org.testng.Reporter;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import lib.ExcelDataConfig;
 import thiYaguFramework.ClickListOrder;
 import thiYaguFramework.KrogerClickList;
 import thiYaguFramework.TestBase;
@@ -29,11 +30,12 @@ public class KrogerPickStore  extends TestBase
 		
 		//Creating Object means Invoking constructor method of that class ;so give driver HomePage(driver).
 		
-		
+		ExcelDataConfig data = new ExcelDataConfig("/Users/thiyagachudar/git/basicTestNGframework/TestData.xlsx");
+		String zipcode = data.getData("TestData",1, 1);
 		KrogerClickList Krog = new KrogerClickList(driver);
 		
 		
-		Krog.EnterZipCodeWithJS("45459");
+		Krog.EnterZipCodeWithJS(zipcode);
 		
 		Krog.ClickSubmit();
 		
@@ -46,10 +48,8 @@ public class KrogerPickStore  extends TestBase
 	public void KrogerLogin(){
 		
 		
-		
-		
 		ClickListOrder cl = new ClickListOrder(driver);
-		cl.EnterEmailID("thiyagu.ny@gmail.com");
+		cl.LoginEmailId("thiyagu.ny@gmail.com");
 		Reporter.log("User is Logged in to the application");
 		
 	}

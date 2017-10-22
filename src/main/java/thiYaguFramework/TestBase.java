@@ -50,7 +50,7 @@ public class TestBase {
 		else if(p.getProperty("browser").contains("chrome"))
 		{
 			
-			System.setProperty("webdriver.chrome.driver","chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver","chromedriver");
 			driver = new ChromeDriver();
 		}
 		else{

@@ -72,6 +72,11 @@ public class ClickListOrder {
 		driver.findElement((By) emailID).sendKeys(email);
 	}
 	
+	public void LoginEmailId(String giveemailID){
+		
+		driver.findElement(By.id("emailAddress"));
+		emailID.sendKeys(giveemailID);
+	}
 	
 	public void javascriptExample() throws Exception {
 		   
